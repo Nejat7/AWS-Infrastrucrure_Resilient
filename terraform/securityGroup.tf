@@ -1,7 +1,7 @@
-resource "aws_security_group" "Mikias_SG" {
+resource "aws_security_group" "Nejat_SG" {
   name        = "allow_http"
   description = "Allow inbound network traffic"
-  vpc_id      = aws_vpc.Mikias_vpc.id
+  vpc_id      = aws_vpc.Nejat_vpc.id
 
   dynamic "ingress" {
     iterator = port

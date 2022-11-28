@@ -2,7 +2,7 @@ resource "aws_instance" "webServers" {
   count           = length(var.subnets_cidr)
   ami             = var.instance_ami
   instance_type   = var.instance_type
-  security_groups = [aws_security_group.Mikias_SG.id]
+  security_groups = [aws_security_group.Nejat_SG.id]
   subnet_id       = element(aws_subnet.public_subnet.*.id, count.index)
   user_data       = file("ec2_apache.sh")
 

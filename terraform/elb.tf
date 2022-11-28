@@ -1,8 +1,8 @@
 # Creates load balancer
-resource "aws_elb" "Mikias-elb" {
-  name            = "Mikias-elb"
+resource "aws_elb" "Nejat-elb" {
+  name            = "Nejat-elb"
   subnets         = aws_subnet.public_subnet.*.id
-  security_groups = [aws_security_group.Mikias_SG.id]
+  security_groups = [aws_security_group.Nejat_SG.id]
 
   listener {
     instance_port     = var.server_port
@@ -26,10 +26,10 @@ resource "aws_elb" "Mikias-elb" {
   connection_draining_timeout = 300
 
   tags = {
-    "Name" = "Mikias-terraform-elb"
+    "Name" = "Nejat-terraform-elb"
   }
 }
 
 output "elb-dns-name" {
-  value = aws_elb.Mikias-elb.dns_name
+  value = aws_elb.Nejat-elb.dns_name
 }
